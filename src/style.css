@@ -1,6 +1,6 @@
 :root {
     --bg: #0b2731;
-    --ink: #061c24; /* card text — darker than the background, etched look */
+    --ink: #000000; /* card text — darker than the background, etched look */
     --line: #04161c; /* card + checkbox borders */
     --link: #3b3bff;
     --check: #2ee62e;
