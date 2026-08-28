@@ -30,3 +30,115 @@ body {
     font-weight: bold;
     text-shadow: 0 0 40px #00ffff;
 }
+
+/*---------- card list --------------*/
+.todoList {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.todoCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 16px 24px;
+    border: 3px solid var(--line);
+}
+
+/*---------- left: checkbox and title --------------*/
+.todoMain {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.todoCheck {
+    appearance: none;
+    -webkit-appearance: none;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    border: 3px solid var(--line);
+    background: none;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+}
+
+.todoCheck::before {
+    content: "✓";
+    font-size: 36px;
+    line-height: 1;
+    color: var(--check);
+    transform: scale(0);
+    transition: transform 120ms ease-in-out;
+}
+
+.todoCheck:checked::before {
+    transform: scale(1);
+}
+
+.todoTitle {
+    color: var(--ink);
+    font-size: 32px;
+    cursor: pointer;
+}
+
+/*---------- right: due date, priority, expand --------------*/
+.todoMeta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 12px;
+    font-size: 20px;
+}
+
+.todoDue,
+.todoPriority {
+    margin: 0;
+    color: var(--ink);
+}
+
+.metaLabel {
+    text-decoration: underline;
+}
+
+.todoExpand {
+    align-self: flex-end; /* pushes it to the card's right edge, unlike the two lines above */
+    margin-top: 4px;
+    padding: 0;
+    border: none;
+    background: none;
+    font: inherit;
+    color: var(--link);
+    cursor: pointer;
+}
+
+.todoExpand:hover {
+    text-decoration: underline;
+}
+
+/* ---------- priority colors ---------- */
+
+.todoCard[data-priority="1"] .todoPriority {
+    color: #3ddc3d;
+}
+
+.todoCard[data-priority="2"] .todoPriority {
+    color: #ffff00;
+}
+
+.todoCard[data-priority="3"] .todoPriority {
+    color: #ff9f1c;
+}
+
+.todoCard[data-priority="4"] .todoPriority {
+    color: #ff2b2b;
+}
