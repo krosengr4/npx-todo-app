@@ -127,18 +127,18 @@ body {
 
 /* ---------- priority colors ---------- */
 
-.todoCard[data-priority="1"] .todoPriority {
+.todoCard[data-priority="D"] .todoPriority {
     color: #3ddc3d;
 }
 
-.todoCard[data-priority="2"] .todoPriority {
+.todoCard[data-priority="C"] .todoPriority {
     color: #ffff00;
 }
 
-.todoCard[data-priority="3"] .todoPriority {
+.todoCard[data-priority="B"] .todoPriority {
     color: #ff9f1c;
 }
 
-.todoCard[data-priority="4"] .todoPriority {
+.todoCard[data-priority="A"] .todoPriority {
     color: #ff2b2b;
 }
