@@ -21,12 +21,13 @@ body {
     align-items: center;
     justify-content: center;
     border: 10px ridge #1a14f0;
-    margin: 24px;
+    margin: 24px auto;
+    max-width: 900px;
 }
 
 .titleHeader {
     color: #b68558;
-    font-size: 60px;
+    font-size: 48px;
     font-weight: bold;
     text-shadow: 0 0 40px #00ffff;
 }
@@ -37,26 +38,20 @@ body {
     flex-direction: column;
     gap: 36px;
     max-width: 1100px;
-    margin: 60px auto;
+    margin: 36px auto;
     padding: 0 20px;
 }
 
 .todoCard {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    padding: 16px 24px;
-    border: 3px solid var(--line);
-}
-
-/*---------- left: checkbox and title --------------*/
-.todoMain {
-    display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 16px;
+    padding: 16px 24px;
+    border: 8px solid var(--line);
+    border-radius: 36px;
 }
 
+/*---------- left: checkbox (sibling of the details, so it never toggles it) --------------*/
 .todoCheck {
     appearance: none;
     -webkit-appearance: none;
@@ -84,18 +79,36 @@ body {
     transform: scale(1);
 }
 
+/*---------- the expanding body --------------*/
+.todoBody {
+    flex: 1;
+}
+
+/* always-visible row: title | meta | arrow */
+.todoSummary {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    list-style: none; /* kill the default disclosure triangle */
+}
+
+.todoSummary::-webkit-details-marker {
+    display: none; /* same, for Safari */
+}
+
 .todoTitle {
     color: var(--ink);
     font-size: 32px;
-    cursor: pointer;
+    text-decoration: underline;
 }
 
-/*---------- right: due date, priority, expand --------------*/
+/*---------- middle: due date and priority --------------*/
 .todoMeta {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-shrink: 0;
     gap: 12px;
     font-size: 20px;
 }
@@ -110,19 +123,25 @@ body {
     text-decoration: underline;
 }
 
-.todoExpand {
-    align-self: flex-end; /* pushes it to the card's right edge, unlike the two lines above */
-    margin-top: 4px;
-    padding: 0;
-    border: none;
-    background: none;
-    font: inherit;
+/*---------- right: dropdown arrow --------------*/
+.todoArrow {
+    justify-self: end;
+    font-size: 36px;
     color: var(--link);
-    cursor: pointer;
+    transition: transform 150ms ease-in-out;
 }
 
-.todoExpand:hover {
-    text-decoration: underline;
+.todoBody[open] .todoArrow {
+    transform: rotate(90deg);
+}
+
+.todoDescription {
+    margin: 16px 0 0;
+    padding-top: 16px;
+    border-top: 2px solid var(--line);
+    color: var(--ink);
+    font-size: 20px;
+    line-height: 1.5;
 }
 
 /* ---------- priority colors ---------- */
