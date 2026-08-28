@@ -6,8 +6,37 @@
         <title>ToDo List</title>
     </head>
     <body>
-        <div class="title">
+        <header class="title">
             <h1 class="titleHeader">ToDo List! 📋</h1>
-        </div>
+        </header>
+
+        <main class="todoList">
+            <article class="todoCard" data-priority="2">
+                <div class="todoMain">
+                    <input
+                        type="checkbox"
+                        class="todoCheck"
+                        id="todo-1"
+                        checked
+                    />
+                    <label class="todoTitle" for="todo-1"
+                        >Take out the trash.</label
+                    >
+                </div>
+
+                <div class="todoMeta">
+                    <p class="todoDue">
+                        <span class="metaLabel">Due Date:</span> Thursday,
+                        10-27-26
+                    </p>
+                    <p class="todoDue">
+                        <span class="metaLabel">Priority</span>: 2
+                    </p>
+                    <button type="button" class="todoExpand">
+                        Click to see description...
+                    </button>
+                </div>
+            </article>
+        </main>
     </body>
 </html>
