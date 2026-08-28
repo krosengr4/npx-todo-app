@@ -6,8 +6,59 @@
         <title>ToDo List</title>
     </head>
     <body>
-        <div class="title">
+        <header class="title">
             <h1 class="titleHeader">ToDo List! 📋</h1>
-        </div>
+        </header>
+
+        <main class="todoList">
+            <article class="todoCard" data-priority="C">
+                <div class="todoMain">
+                    <input
+                        type="checkbox"
+                        class="todoCheck"
+                        id="todo-1"
+                        checked
+                    />
+                    <label class="todoTitle" for="todo-1"
+                        >Take out the trash.</label
+                    >
+                </div>
+
+                <div class="todoMeta">
+                    <p class="todoDue">
+                        <span class="metaLabel">Due Date:</span> Thursday,
+                        10-27-26
+                    </p>
+                    <p class="todoPriority">
+                        <span class="metaLabel">Priority</span>: C
+                    </p>
+                    <button type="button" class="todoExpand">
+                        Click to see description…
+                    </button>
+                </div>
+            </article>
+
+            <article class="todoCard" data-priority="A">
+                <div class="todoMain">
+                    <input type="checkbox" class="todoCheck" id="todo-2" />
+                    <label class="todoTitle" for="todo-2"
+                        >Study for Calculus Exam.</label
+                    >
+                </div>
+
+                <div class="todoMeta">
+                    <p class="todoDue">
+                        <span class="metaLabel">Due Date:</span> Tuesday,
+                        11-5-26
+                    </p>
+                    <p class="todoPriority">
+                        <span class="metaLabel">Priority</span>: A
+                    </p>
+                    <button type="button" class="todoExpand">
+                        Click to see description…
+                    </button>
+                </div>
+            </article>
+        </main>
     </body>
 </html>
